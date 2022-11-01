@@ -1,5 +1,5 @@
 # Flight Price prediction model
-This is a machine learning the model for flight price prediction for four metro cities.<br>
+This is a machine learning the model for flight price prediction for four metro cities of India.<br>
 
 # Motivation
 I started to learn machine learning to know in depth about AI and its working. I came to know concepts behind all machine learning models and algorithms. And it is important to work on application (real world application) to actually make a difference.
