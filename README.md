@@ -13,4 +13,5 @@ This code is written in Google Colab. It has all the libraries required in doing
 <img src="https://github.com/zmwaris1/logos/blob/main/105040771-43887300-5a88-11eb-9f01-bee100b9ef22.png" alt="Numpy" height="40" style="vertical-align:top; margin:4px">
 
 ## Demo video
-Watch the demo [Here](https://youtu.be/YCrqlNQbYAE)
+https://user-images.githubusercontent.com/99170634/203472570-8ea97eb2-8f2d-4932-8f59-56b5afa1fbf5.mp4
+
