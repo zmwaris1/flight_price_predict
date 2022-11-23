@@ -1,0 +1,208 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Fare Prediction</title>
+    <div style="background-size: cover; background-repeat: no-repeat; background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Frockwellcollins.com%2F-%2Fmedia%2Fimages%2Frc2016%2Fmarketing%2Fcategories%2Fcommercial-aviation%2Fconnectivity-services%2Fcommercial-av-theater-image.jpg%3Fbc%3Dwhite%26as%3D0%26h%3D1080%26la%3Den%26w%3D1920%26lastupdate%3D20180313165546%26hash%3D44ceb515a2d57646ba0bf088c1b3681e77d37c96&f=1&nofb=1&ipt=70dfb1d989f9eac9a6efed64edbd0e7dbbd2f232c51b36bd55fdbb125d27f3e7&ipo=images);">
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <script src="https://kit.fontawesome.com/a12bd21133.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-dark bg-dark">
+         <div class="container">
+            <a class="navbar-brand" href="/" style="font-family:courier;">Flight Fare Prediction using ML</a>
+         </div>
+
+    </nav>
+
+
+
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-family:courier;">Departure Date</h5>
+                            <!-- Departure -->
+                            <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-family:courier;">Arrival Date</h5>
+                            <!-- Arrival -->
+                            <input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title" style="font-family:courier;">Source</h5>
+                            <select name="Source" id="Source" required="required">
+                                <option value="Delhi">Delhi</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Chennai">Chennai</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-family:courier;">Destination</h5>
+                            <!-- Destination -->
+                            <select name="Destination" id="Destination" required="required">
+                                <option value="Cochin">Cochin</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="New Delhi">Bangalore</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Kolkata">Kolkata</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-family:courier;">Stoppage</h5>
+                            <!-- Total Stops -->
+                            <select name="stops" required="required">
+                                <option value="0">Non-Stop</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-family:courier;">Airline</h5>
+                            <!-- Airline -->
+                            <select name="airline" id="airline" required="required">
+                                <option value="Jet Airways">Jet Airways</option>
+                                <option value="IndiGo">IndiGo</option>
+                                <option value="Air India">Air India</option>
+                                <option value="Multiple carriers">Multiple carriers</option>
+                                <option value="SpiceJet">SpiceJet</option>
+                                <option value="Vistara">Vistara</option>
+                                <option value="Air Asia">Air Asia</option>
+                                <option value="GoAir">GoAir</option>
+                                <option value="Multiple carriers Premium economy">Multiple carriers Premium economy
+                                </option>
+                                <option value="Jet Airways Business">Jet Airways Business</option>
+                                <option value="Vistara Premium economy">Vistara Premium economy</option>
+                                <option value="Trujet">Trujet</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-success">
+        </form>
+
+        <br>
+        <br>
+        <div class="card">
+            <div class="card-body">
+        <h3 style="font-size:25px; color:rgb(0, 6, 0); font-weight: bold;">{{ prediction_text }}</h3>
+        </div></div>
+        <br>
+        <br>
+      
+
+    </div>
+    <!-- Footer -->
+    <footer class="bg-light text-center text-black-50">
+        <!-- Grid container -->
+        <div class="container p-1 pb-0">
+
+        <div class="text-center p-3" style="background-color: rgba(170, 161, 161, 0.2);">
+          <a class="text-black" href="/" style="font-family:courier;">Predict Another</a>
+        </div></div>
+        <h4 style="font-family:courier;">Contact Me:</h4>
+        <a class="btn btn-link btn-lg text-dark" href="https://github.com/zmwaris1" role="button"
+        data-mdb-ripple-color="dark" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a class="btn btn-link btn-lg text-dark" href="https://www.linkedin.com/in/zafar-waris-b65391125/" role="button"
+        data-mdb-ripple-color="dark" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a class="btn btn-link btn-lg text-dark" href="https://twitter.com/Zmwaris" role="button"
+        data-mdb-ripple-color="dark" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+      </footer>
+
+        <!-- Copyright -->
+        <div class="text-center text-light p-3" style="background-color: rgba(3, 36, 67, 0.504);">
+            © 2022 Designed and Developed by <a class="text-light" href="https://zmwaris1.github.io" target="_blank">Zafar M Waris.</a>
+        </div>
+        <!-- Copyright -->
+
+
+      
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
