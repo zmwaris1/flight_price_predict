@@ -15,3 +15,4 @@ This code is written in Google Colab. It has all the libraries required in doing
 ## Demo video
 https://user-images.githubusercontent.com/99170634/203472570-8ea97eb2-8f2d-4932-8f59-56b5afa1fbf5.mp4
 
+### Due to termination of Heroku free services the app won't load.
